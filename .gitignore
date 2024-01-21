@@ -72,8 +72,12 @@ yalc.lock
 # VSCode workspace settings
 .vscode/settings.json
 
+# WebStorm workspace settings
+.idea
+
 # environment variables
-.env
+# todo: uncomment .env
+#.env
 
 # Mac OS finder cache files
 .DS_Store

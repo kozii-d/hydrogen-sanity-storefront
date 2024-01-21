@@ -1,6 +1,6 @@
 import clsx from 'clsx';
 
-import HeroContent from '~/components/heroes/HeroContent';
+import HeroMainItem from '~/components/heroes/HeroMainItem';
 import type {SanityHeroPage} from '~/lib/sanity';
 import {useColorTheme} from '~/lib/theme';
 
@@ -49,7 +49,7 @@ export default function PageHero({fallbackTitle, hero}: Props) {
       {/* Hero content */}
       {hero.content && (
         <div className="mt-8">
-          <HeroContent content={hero.content} />
+          <HeroMainItem mainItem={hero.content} />
         </div>
       )}
     </div>

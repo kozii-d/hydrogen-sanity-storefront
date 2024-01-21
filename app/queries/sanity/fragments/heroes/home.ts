@@ -6,7 +6,9 @@ import {LINK_INTERNAL} from '../linkInternal';
 import {PRODUCT_WITH_VARIANT} from '../productWithVariant';
 
 export const HERO_HOME = groq`
-  content[0] {
+  content {
+    aboutSection,
+    "mainItem": items[0] {
     _type,
     (_type == 'imageWithProductHotspots') => {
       ${IMAGE_WITH_PRODUCT_HOTSPOTS}
@@ -14,6 +16,7 @@ export const HERO_HOME = groq`
     (_type == 'productWithVariant') => {
       ...${PRODUCT_WITH_VARIANT}
     },
+  },
   },
   "link": links[0] {
     (_type == 'linkExternal') => {

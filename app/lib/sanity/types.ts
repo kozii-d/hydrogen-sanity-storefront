@@ -87,8 +87,13 @@ export type SanityHeroCollection = {
   data?: ProductWithNodes[] | ProductWithNodes;
 };
 
+export type SanityHeroHomeContent = {
+  aboutSection?: string;
+  mainItem?: SanityImageWithProductHotspots | SanityProductWithVariant
+};
+
 export type SanityHeroHome = {
-  content?: SanityImageWithProductHotspots | SanityProductWithVariant;
+  content?: SanityHeroHomeContent;
   link?: SanityLink;
   title?: string;
   data?: ProductWithNodes[] | ProductWithNodes;

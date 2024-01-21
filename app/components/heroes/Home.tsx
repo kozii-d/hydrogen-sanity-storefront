@@ -1,8 +1,9 @@
 import clsx from 'clsx';
 
 import LinkButton from '~/components/elements/LinkButton';
-import HeroContent from '~/components/heroes/HeroContent';
+import HeroMainItem from '~/components/heroes/HeroMainItem';
 import type {SanityHeroHome} from '~/lib/sanity';
+import HeroAboutSection from "~/components/heroes/HeroAboutSection";
 
 type Props = {
   hero: SanityHeroHome;
@@ -35,11 +36,17 @@ export default function HomeHero({hero}: Props) {
       {hero.content && (
         <div
           className={clsx(
-            'mt-6 w-full', //
+            'mt-6 w-full flex flex-col gap-5', //
             'md:mt-12',
           )}
         >
-          <HeroContent content={hero.content} />
+          {/* Main item */}
+          {hero.content.mainItem && (
+            <HeroMainItem mainItem={hero.content.mainItem} />
+          )}
+
+          {/* About section */}
+          <HeroAboutSection content={hero.content.aboutSection}/>
         </div>
       )}
     </div>
